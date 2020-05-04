@@ -1,23 +1,23 @@
 import React from 'react'
-import { Fade, AutoPlay } from "@egjs/flicking-plugins";
+import { Fade, AutoPlay, Parallax } from "@egjs/flicking-plugins";
 import Chart from "../components/skills"
 import Flicking from "@egjs/react-flicking";
 
 
 const skillsbox = () => {
-    const plugs = [new Fade(), new AutoPlay(2000, "NEXT")];
+    const plugs = [new Fade(),new AutoPlay(2000, "NEXT")];
     return(
         <div className="skillbox">
         <h2 style={{marginTop: '24px',textAlign: 'center',fontSize: '28px'}}>
             My Overall skills
         </h2>
         <Flicking
-            className="flicking"
+            className="flicking flicking0"
             circular={true}
-            gap={10}
+            gap={8}
             duration={500}
             plugins={plugs}
-            moveType = {{type: "snap", count: 4}}
+            moveType = {{type: "snap", count: 1}}
         >
             
         <div className="panel">

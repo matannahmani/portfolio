@@ -16,13 +16,12 @@ class Navbar extends Component{
   closeMenu () {
     this.setState({menuOpen: false})
   }
-
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll)
     }
-    componentWillMount() {
-        window.removeEventListener('scroll', this.handleScroll)
-    }
+    // componentWillMount() {
+    //     window.removeEventListener('scroll', this.handleScroll)
+    // }
     isScrolling;
     handleScroll() {
         const nav = document.querySelector('.mynav');

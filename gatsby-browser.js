@@ -8,3 +8,5 @@
 import "./src/components/styles/burger.css"
 import "./src/components/styles/index.scss"
 import "./src/components/styles/footer.scss"
+import "./src/components/styles/chart.scss"
+import "./src/components/styles/carousel.scss"
