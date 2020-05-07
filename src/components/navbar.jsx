@@ -26,13 +26,18 @@ class Navbar extends Component{
     handleScroll() {
         const nav = document.querySelector('.mynav');
         const button = document.querySelector('.bm-burger-button');
-        if (document.documentElement.scrollTop < 45){
+        const burgericon = document.querySelectorAll('.bm-burger-bars');
+        if (document.documentElement.scrollTop < 520){
             nav.style.position = 'absolute';
             button.style.position = 'absolute';
+            button.style.bottom = '36px';
+            button.style.top = '';
+            burgericon.forEach ((icon) => icon.style.background = 'white');
         }
         else{
             nav.style.position = 'fixed';
             button.style.position = 'fixed';
+            button.style.top = '36px';
             window.clearTimeout( this.isScrolling );
             // hide navbar
             nav.classList.add('hide');
@@ -41,7 +46,8 @@ class Navbar extends Component{
             this.isScrolling = setTimeout(function() {
                 // show navbar after display ends
                 nav.classList.remove('hide');
-                button.style.opacity = 1;
+                button.style.opacity = 0.99;
+                burgericon.forEach ((icon) => icon.style.background = 'black');
             }, 66);
         }
     }

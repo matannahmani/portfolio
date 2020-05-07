@@ -30,7 +30,7 @@ class Skills extends Component {
                     'no-progress': strokeLength === 0
                 })}
            >
-                            <h2 style={{position: "absolute", top: '25%',right: '50%', transform: 'translate(50%,50%)'}}>{this.props.progress}%</h2>
+                            <h2 style={{position: "absolute", top: '22.5%',right: '50%', transform: 'translate(50%,22.5%)'}}>{this.props.progress}</h2>
                <svg viewBox="0 0 180 180" width={dimension} height={dimension}>
                    <circle
                        className="radial-chart-total"

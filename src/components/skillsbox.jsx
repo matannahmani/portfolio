@@ -27,10 +27,10 @@ const skillsbox = () => {
             <Chart fill={80} label="Back End"/>
         </div>
         <div className="panel">
-            <Chart fill={90} label="Thinking"/>
+            <Chart fill={80} label="Thinking"/>
         </div>
         <div className="panel">
-            <Chart fill={80} label="Leadership"/>
+            <Chart fill={60} label="Leadership"/>
         </div>
       </Flicking>
       </div>

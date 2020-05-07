@@ -9,8 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 main{
-  padding-top: 100px;
-  transition: padding 0.25s;
+  /* padding-top: 100px;
+  transition: padding 0.25s; */
 }
 article,
 aside,
