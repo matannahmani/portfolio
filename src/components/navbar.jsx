@@ -29,6 +29,8 @@ class Navbar extends Component{
         const burgericon = document.querySelectorAll('.bm-burger-bars');
         if (document.documentElement.scrollTop < 520){
             nav.style.position = 'absolute';
+            nav.style.height = "100%";
+            nav.style.width = "100%";
             button.style.position = 'absolute';
             button.style.bottom = '36px';
             button.style.top = '';
@@ -41,6 +43,8 @@ class Navbar extends Component{
             window.clearTimeout( this.isScrolling );
             // hide navbar
             nav.classList.add('hide');
+            nav.style.height = "0%";
+            nav.style.width = "0%";
             button.style.opacity = 0;
             // Set a timeout to run after scrolling ends
             this.isScrolling = setTimeout(function() {

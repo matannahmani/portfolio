@@ -11,7 +11,6 @@ import PropTypes from "prop-types"
 
 import "./layout.css"
 import Footer from "../components/footer"
-
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {

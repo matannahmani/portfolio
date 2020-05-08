@@ -1,7 +1,6 @@
 .mynav{
   /* background-color: #05668D; */
-  height: 100%;
-  width: 100%;
+
   padding-top: 100px;
   transition: opacity 0.25s;
   position: absolute;

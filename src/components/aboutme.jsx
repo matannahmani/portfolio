@@ -6,6 +6,7 @@ import clockFast from '@iconify/icons-mdi/clock-fast';
 import responsiveIcon from '@iconify/icons-mdi/responsive';
 import mdLightBulb from '@iconify/icons-heroicons/md-light-bulb';
 import rocketIcon from '@iconify/icons-vaadin/rocket';
+import Bar from './barv2';
 
 const Aboutme = () => {
     const [show, setShow] = useState(false);
@@ -33,7 +34,6 @@ const Aboutme = () => {
     const animateabout = () => {
         anime({
             targets: '.aboutme h3',
-            translateX: 0,
             easing: 'linear',
             opacity: 1
         });
@@ -52,12 +52,34 @@ const Aboutme = () => {
     }
     return (
         <div className="aboutme">
-            <h3 style={{textAlign: 'center'}}>About</h3>
+            <h3 id="about">About</h3>
             <div className="details">
                 <Abouticon icon={<Icon icon={clockFast} />} label="Fast" text='Fast load times and lag free interaction, my highest priority. '/>
                 <Abouticon icon={<Icon icon={responsiveIcon} />} label="Responsive" text='My layouts will work on any device, big or small.'/>
                 <Abouticon icon={<Icon icon={mdLightBulb} />} label="Intuitive" text='Strong preference for easy to use, intuitive UX/UI.'/>
                 <Abouticon icon={<Icon icon={rocketIcon} />} label="Dynamic" text="Websites don't have to be static, I love making pages come to life. "/>
+            </div>
+            <div className="whoami">
+                <div className="me">
+                <img src="https://res.cloudinary.com/ddqtnp0ic/image/upload/v1588912419/oooo.plus_91_s88bs4.png" alt=""/>
+                <h3>Who's this guy?</h3>
+                <p>
+I'm a Full-Stack Developer from Eilat in Israel.<br/>
+I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.<br/>
+Let's make something special. </p>
+                </div>
+                <div className="myskills">
+                    <Bar label="HTML" fill={80}/>
+                    <Bar label="CSS" fill={70}/>
+                    <Bar label="React" fill={65}/>
+                    <Bar label="React Native" fill={35}/>
+                    <Bar label="JavaScript" fill={70}/>
+                    <Bar label="Ruby/Rails" fill={70}/>
+                    <Bar label="C#" fill={100}/>
+                    <Bar label="PhaserJS" fill={50}/>
+                    <Bar label="Photoshop" fill={30}/>
+
+                </div>
             </div>
         </div>
     );

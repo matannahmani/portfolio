@@ -22,6 +22,7 @@ class Index extends Component{
       <Banner/>
       </header>
       <Aboutme/>
+      
     </Layout>
     )
   }
