@@ -5,9 +5,9 @@ const Bar = (props) => {
     const [showanim, setShowanim] = useState(false);
     useEffect(() => {
         window.addEventListener('scroll', (e) => {
-            if (isScrolledIntoView(document.querySelector('.whoami'))) setShowanim(true);
+            if (isScrolledIntoView(document.querySelector('.aboutp p'))) setShowanim(true);
         });
-        if (isScrolledIntoView(document.querySelector('.whoami'))) setShowanim(true);
+        if (isScrolledIntoView(document.querySelector('.aboutp p'))) setShowanim(true);
         if (showanim === true){
             animateskills();
         }
@@ -18,9 +18,9 @@ const Bar = (props) => {
         var elemBottom = rect.bottom;
     
         // Only completely visible elements return true:
-        var isVisible = (elemTop) && (elemBottom <= window.innerHeight);
+        var isVisible = (elemTop <= 270) && (elemBottom <= window.innerHeight);
         // Partially visible elements return true:
-        //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+        // isVisible = elemTop < window.innerHeight && elemBottom >= -100;
         return isVisible;
     }
     const animateskills = () => {

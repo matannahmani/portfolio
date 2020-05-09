@@ -1,0 +1,119 @@
+.project{
+   display: flex;
+   flex-direction: column; 
+   margin: 10% 0px;
+}
+.tabs{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 80px;
+   position: relative;
+   span{
+      padding: 24px;
+      font-weight: bolder;
+      color: black;
+      transition: ease background-color,1s;
+   }
+}
+.float-color {
+	position: absolute;
+	overflow: hidden;
+	background-color: #f72585;
+	width: 0px;
+	top: 8px;
+	width: 150px;
+	height: 60px;
+	z-index: -1;
+   opacity: 0.9;
+   transition: ease-in-out all,0.5s;
+}
+.cardbox{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+.card{
+   margin-top: 80px;
+   width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.cardpop{
+   width: 600px;
+   height: 600px;
+   z-index: 1000;
+   position: fixed;
+   top: 2%;
+   left: 50%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   background: #fff;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+   box-sizing: border-box;
+   color: #333;
+   text-align: left;
+   // transform: translateX(-50%) !important;
+}
+
+.imgcontroll{
+   position: relative;
+   align-items: center;
+   width: 100%;
+   height: 50%;
+   border-bottom: 2px solid black;
+   overflow: hidden;
+   img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      height: 300px;
+   }
+}
+#left{
+   position: absolute;
+   z-index: 50;
+   bottom: 8px;
+   left: 8px;
+   font-size: 40px;
+   color: white;
+   background: black;
+   opacity: 0.3;
+}
+#left:hover{cursor: pointer;}
+#right{
+   position: absolute;
+   z-index: 50;
+   bottom: 8px;
+   right: 8px;
+   font-size: 40px;
+   color: white;
+   background: black;
+   opacity: 0.3;
+}
+#right:hover{cursor: pointer;}
+#close{
+   position: absolute;
+   bottom: 0px;
+   right: 0px;
+   font-size: 40px;
+}
+.awssld {height: 100%;}
+.shadowbg {
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: lightgray;
+	opacity: 0.6;
+	height: 100vh;
+	z-index: 500;
+}
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+   .cardpop{width: 300px;}
+}
+@media only screen and (max-width: 300px) {
+   .cardpop{display: none;}
+}

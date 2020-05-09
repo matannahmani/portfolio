@@ -26,7 +26,7 @@ const Aboutme = () => {
         var elemBottom = rect.bottom;
     
         // Only completely visible elements return true:
-        var isVisible = (elemTop >= 60) && (elemBottom <= window.innerHeight);
+        var isVisible = (elemTop > 60) && (elemBottom <= window.innerHeight);
         // Partially visible elements return true:
         //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
         return isVisible;
@@ -52,7 +52,7 @@ const Aboutme = () => {
     }
     return (
         <div className="aboutme">
-            <h3 id="about">About</h3>
+            <h3 className="section-t">About</h3>
             <div className="details">
                 <Abouticon icon={<Icon icon={clockFast} />} label="Fast" text='Fast load times and lag free interaction, my highest priority. '/>
                 <Abouticon icon={<Icon icon={responsiveIcon} />} label="Responsive" text='My layouts will work on any device, big or small.'/>
