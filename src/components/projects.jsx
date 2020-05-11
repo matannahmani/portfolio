@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import anime from 'animejs';
 import Card from './card';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 let flag = [false,false]; // after anim shown trigger flag
 let resize;
@@ -111,17 +111,7 @@ const Projects = () => {
             <div className="cardbox">
             <Card lang="JS - Ruby/Rails" title="Last Resort" img="https://lh3.googleusercontent.com/akv2Bdp7i5Vv-sl9FuP3_dhWpUO80zULf-Pkh6RFleomEp6pZorHuCNm3FbR9oAMunVK" />
             </div>
-            <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnVisibilityChange
-            draggable
-            pauseOnHover
-            />
+
         </div>
     )
 }

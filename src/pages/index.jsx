@@ -6,6 +6,8 @@ import Navbar from "../components/navbar";
 import Aboutme from '../components/aboutme';
 import Project from '../components/projects';
 import Inquiry from '../components/inquiry';
+import { ToastContainer, toast } from 'react-toastify';
+
 class Index extends Component{
   
   componentDidMount() {
@@ -22,6 +24,17 @@ class Index extends Component{
       <Aboutme/>
       <Project/>
       <Inquiry/>
+      <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable
+            pauseOnHover
+            />
     </Layout>
     )
   }

@@ -154,7 +154,11 @@
 }
 @media only screen and (min-width: 300px) and (max-width: 800px) {
    .cardpop{width: 300px;}
+   .Toastify__toast-container--top-center{
+      transform: translateX(0%) !important;
+   }
 }
 @media only screen and (max-width: 300px) {
    .cardpop{display: none;}
+   .Toastify__toast-container--top-center{display: none;}
 }
