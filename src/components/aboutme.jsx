@@ -14,12 +14,11 @@ const Aboutme = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', (e) => {
-            if (isScrolledIntoView(document.querySelector('.aboutme h3'),600)) setShow(true);
-            if (isScrolledIntoView(document.querySelector('.whoami'),500)) setShowskill(true);
+            if (isScrolledIntoView(document.querySelector('.abouticon'),550)) setShow(true);
+            if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true);
 
         });
-        if (isScrolledIntoView(document.querySelector('.aboutme h3'),600)) setShow(true); // first load check
-        if (isScrolledIntoView(document.querySelector('.whoami'),500)) setShowskill(true); // first load check if already in position
+        if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true); // first load check if already in position
         if (show === true && flag[0] === false){
             animateabout();
             animateicons();
@@ -37,6 +36,7 @@ const Aboutme = () => {
     
         // Only completely visible elements return true:
         var isVisible = (elemTop < range) && (elemBottom >= 0);
+        console.log(el.className + isVisible + ' ' + elemTop)
         // Partially visible elements return true:
         //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
         return isVisible;

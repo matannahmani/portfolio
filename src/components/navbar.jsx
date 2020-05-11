@@ -19,11 +19,10 @@ class Navbar extends Component{
   }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        this.setState({about: document.querySelector('.aboutme')});
+        this.setState({about: {about: document.querySelector('.aboutme'),
+        project: document.querySelector('.project')
+      }});
     }
-    // componentWillMount() {
-    //     window.removeEventListener('scroll', this.handleScroll)
-    // }
     isScrolling;
     handleScroll() {
         const nav = document.querySelector('.mynav');
@@ -62,8 +61,8 @@ class Navbar extends Component{
         return (
             <div className="mynav">
             <Menu isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
-                <h3 onClick={() => {this.closeMenu(); this.state.about.scrollIntoView({ behavior: 'smooth', block: 'start'});}} ><h3>Home</h3></h3>
-                <h3 onClick={() => this.closeMenu()}><h3>Projects</h3></h3>
+                <h3 onClick={() => {this.closeMenu(); this.state.about.about.scrollIntoView({ behavior: 'smooth', block: 'start'});}} ><h3>Home</h3></h3>
+                <h3 onClick={() => {this.closeMenu();this.state.about.project.scrollIntoView({ behavior: 'smooth', block: 'start'});}}><h3>Projects</h3></h3>
                 <h3 onClick={() => this.closeMenu()}><h3>Contact</h3></h3>
             </Menu>
           </div>
