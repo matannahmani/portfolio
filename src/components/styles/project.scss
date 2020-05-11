@@ -2,6 +2,7 @@
    display: flex;
    flex-direction: column; 
    margin: 10% 0px;
+   opacity: 0;
 }
 .tabs{
    display: flex;
@@ -35,10 +36,26 @@
 .card{
    margin-top: 80px;
    width: 300px;
+   height: 600px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+}
+.card-parent{
+   position: relative;
+}
+.hovercard{
+   margin-top: 80px;
+   width: 300px;
+   height: 600px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   span{
+      margin-top: 25%;
+   }
 }
 .cardpop{
    width: 600px;
@@ -55,14 +72,60 @@
    box-sizing: border-box;
    color: #333;
    text-align: left;
-   // transform: translateX(-50%) !important;
+   transform: translateX(-50%) !important;
+   opacity: 0;
 }
-
+.card-details{
+   display: flex;
+   flex-direction: column;
+   margin-right: auto;
+   margin-left: 16px;
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+   height: 100%;
+   h3{
+      margin-top: 50px;
+   }
+   a{
+      text-decoration: none;
+   }
+   span{
+      margin-top: 16px;
+   }
+   .show-site{
+      position: absolute;
+      bottom: 24px;
+      left: 0px;
+      font-size: 24px;
+      padding: 8px;
+      background-color: #e31b6d;
+      color: white;
+      font-weight: 300;
+      font-family: 'Times New Roman', Times, serif;
+      opacity: 0.9;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: ease-in-out all 0.5s;
+      svg{
+         transform: rotate(360deg) translateY(4.5px) !important;
+      }
+   }
+   .show-site:hover{
+      background-color: white;
+      color:#e31b6d;
+   }
+}
+.card-p{
+   line-height: 24px;
+   font-size: 12px;
+   margin-right: 24px;
+}
 .imgcontroll{
    position: relative;
    align-items: center;
    width: 100%;
-   height: 50%;
+   height: 600px;
    border-bottom: 2px solid black;
    overflow: hidden;
    img {
@@ -72,28 +135,6 @@
       height: 300px;
    }
 }
-#left{
-   position: absolute;
-   z-index: 50;
-   bottom: 8px;
-   left: 8px;
-   font-size: 40px;
-   color: white;
-   background: black;
-   opacity: 0.3;
-}
-#left:hover{cursor: pointer;}
-#right{
-   position: absolute;
-   z-index: 50;
-   bottom: 8px;
-   right: 8px;
-   font-size: 40px;
-   color: white;
-   background: black;
-   opacity: 0.3;
-}
-#right:hover{cursor: pointer;}
 #close{
    position: absolute;
    bottom: 0px;

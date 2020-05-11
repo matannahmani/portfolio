@@ -7,26 +7,36 @@ import responsiveIcon from '@iconify/icons-mdi/responsive';
 import mdLightBulb from '@iconify/icons-heroicons/md-light-bulb';
 import rocketIcon from '@iconify/icons-vaadin/rocket';
 import Bar from './barv2';
-
+let flag = [false,false]; // after anim shown trigger flag
 const Aboutme = () => {
     const [show, setShow] = useState(false);
+    const [showskillbox, setShowskill] = useState(false);
+
     useEffect(() => {
         window.addEventListener('scroll', (e) => {
-            if (isScrolledIntoView(document.querySelector('.aboutme h3'))) setShow(true);
+            if (isScrolledIntoView(document.querySelector('.aboutme h3'),600)) setShow(true);
+            if (isScrolledIntoView(document.querySelector('.whoami'),500)) setShowskill(true);
+
         });
-        if (isScrolledIntoView(document.querySelector('.aboutme h3'))) setShow(true);
-        if (show === true){
+        if (isScrolledIntoView(document.querySelector('.aboutme h3'),600)) setShow(true); // first load check
+        if (isScrolledIntoView(document.querySelector('.whoami'),500)) setShowskill(true); // first load check if already in position
+        if (show === true && flag[0] === false){
             animateabout();
             animateicons();
+            flag[0] = true;
         }
+        if (showskillbox && flag[1] === false){
+            animateskills();
+            flag[1] = true;
+        } 
     });
-    const isScrolledIntoView = (el) => {
+    const isScrolledIntoView = (el,range = 270) => {
         var rect = el.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
     
         // Only completely visible elements return true:
-        var isVisible = (elemTop > 60) && (elemBottom <= window.innerHeight);
+        var isVisible = (elemTop < range) && (elemBottom >= 0);
         // Partially visible elements return true:
         //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
         return isVisible;
@@ -49,6 +59,25 @@ const Aboutme = () => {
             duration: 4000,
             // easing: 'easeOutElastic(1, .8)',
           });
+    }
+        const animateskills = () => {
+            anime({
+                targets: '.whoami',
+                opacity: 1
+            })
+            anime({
+                targets: '.me',
+                translateX: [-500,0],
+                easing: 'linear',
+                duration: 500
+            });
+            anime({
+                targets: '.myskills',
+                translateX: [0,500],
+                easing: 'linear',
+                duration: 500,
+                direction: 'reverse'
+            });
     }
     return (
         <div className="aboutme">

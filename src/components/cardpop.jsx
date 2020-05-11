@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import closeIcon from '@iconify/icons-jam/close';
 import baselineArrowBackIos from '@iconify/icons-ic/baseline-arrow-back-ios';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import anime from 'animejs';
+import adminSiteAlt3 from '@iconify/icons-dashicons/admin-site-alt3';
+
 const Cardpop = (props) => {
     const [close,setClose] = useState(false);
+    window.addEventListener('keydown', key => {if (key.isComposing || key.keyCode === 27) setClose(true)});
     useEffect(() => {
             anime({
                 targets: '.cardpop',
-                scale: [0.5,1],
-                easing: 'easeInOutSine',
-                translateX: ['-90%',"-50%"],
-                opacity: [0,1],
+                easing: 'easeInCirc',
+                opacity: 1,
                 duration: 400
             });
             if (close === true)
             {
                 anime({
-                    targets: '.cardpop',
-                    scale: [1,0],
-                    translateX: ["-50%",'-90%'],
-                    easing: 'easeInOutSine',
-                    duration: 200
+                  targets: '.cardpop',
+                  easing: 'easeOutCirc',
+                  opacity: 0,
+                  duration: 400
                 });
                 setTimeout(() => props.unMount(),200)
             }
@@ -45,6 +45,12 @@ const Cardpop = (props) => {
         <ButtonBack className="navt"><Icon icon={baselineArrowBackIos} /></ButtonBack>
         <ButtonNext className="navt"><Icon icon={baselineArrowBackIos} /></ButtonNext>
       </CarouselProvider>
+        </div>
+        <div className="card-details">
+          <h3>{props.name}</h3>
+          <span>{props.done}</span>
+          <span className="card-p">{props.descp}</span>
+          <a href={props.site} target="_blank"><span className="show-site"><Icon id="#site-show" icon={adminSiteAlt3} /> VIEW SITE</span></a>
         </div>
         <Icon id='close' onClick={() => setClose(true)} icon={closeIcon} />
     </div>

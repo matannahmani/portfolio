@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import anime from 'animejs';
 import Card from './card';
-let flag = false; // after anim shown trigger flag
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+let flag = [false,false]; // after anim shown trigger flag
 let resize;
 const Projects = () => {
     const [showanim, setShowanim] = useState(false);
+    const [showanimcard, setShowanimcard] = useState(false);
     const [tab, setTab] = useState(0);
     useEffect(() => {
         const tabs = document.querySelectorAll('.tabs span');
@@ -12,18 +15,40 @@ const Projects = () => {
 
         // event listener to check if visable
         window.addEventListener('scroll', (e) => {
-            if (isScrolledIntoView(document.querySelector('.whoami'))) setShowanim(true);
+            if (isScrolledIntoView(document.querySelector('.project'))) setShowanim(true);
+            if (isScrolledIntoView(document.querySelector('.card'),450)) setShowanimcard(true);
+
         });
         // First load position floatbar to all + load animation
-        if (isScrolledIntoView(document.querySelector('.whoami'))) setShowanim(true);
-            if (showanim === true && flag === false){
+        if (isScrolledIntoView(document.querySelector('.project'))) setShowanim(true);
+        if (isScrolledIntoView(document.querySelector('.card'),450)) setShowanimcard(true);
+            if (showanim === true && flag[0] === false){
                 animateskills();
                 floatbar.style.transition = 'none'; // hide transition if fast scroll
                 floatbar.style.width = tabs[tab].clientWidth+'px';
                 floatbar.style.left = tabs[tab].offsetLeft+'px';
                 floatbar.style.transition = ''; // enable transition animation after fast scroll check
-                flag = true;
-        }
+                flag[0] = true;
+                toast.info('Click on project to view details!', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true
+                    });
+            }
+            if (showanim === true && flag[1] === false){
+                flag[1] = true;
+                anime({
+                    targets: '.card',
+                    scale: [0.5,1],
+                    easing: 'spring',
+                    opacity: [0,1],
+                    duration: 1200
+                })
+            }
+
         // check for RESIZE
         window.addEventListener('resize', () => {
             // when resize no transition effect
@@ -47,11 +72,11 @@ const Projects = () => {
             e.target.style.color = 'white';
             })});
     });
-    const isScrolledIntoView = (el) => {
+    const isScrolledIntoView = (el,range = 500) => {
         var rect = el.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
-        var isVisible = (elemTop <= 270) && (elemBottom <= window.innerHeight);
+        var isVisible = (elemTop < range) && (elemBottom >= 0);
         return isVisible;
     }
     const animateskills = () => {
@@ -63,6 +88,16 @@ const Projects = () => {
             translateX: [-100,0],
             duration: 1000
         });
+        anime({
+            targets: '.project',
+            opacity: 1
+        })
+        anime({
+            targets: '.tabs',
+            translateY: [-200,0],
+            easing: 'linear',
+            opacity: [0,1]
+        })
     }
     return(
         <div className="project">
@@ -74,8 +109,19 @@ const Projects = () => {
                 <span onClick={() => setTab(2)}>Ruby/Rails</span>
             </div>
             <div className="cardbox">
-            <Card title="Last Resort" img="https://lh3.googleusercontent.com/akv2Bdp7i5Vv-sl9FuP3_dhWpUO80zULf-Pkh6RFleomEp6pZorHuCNm3FbR9oAMunVK" />
+            <Card lang="JS - Ruby/Rails" title="Last Resort" img="https://lh3.googleusercontent.com/akv2Bdp7i5Vv-sl9FuP3_dhWpUO80zULf-Pkh6RFleomEp6pZorHuCNm3FbR9oAMunVK" />
             </div>
+            <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange
+            draggable
+            pauseOnHover
+            />
         </div>
     )
 }
