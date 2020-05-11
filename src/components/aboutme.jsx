@@ -61,6 +61,12 @@ const Aboutme = () => {
           });
     }
         const animateskills = () => {
+            const elements = document.querySelectorAll('.fill');
+            const width = []
+            elements.forEach((el) => {
+                width.push(el.style.width);
+                el.style.width = '0px';
+            })
             anime({
                 targets: '.whoami',
                 opacity: 1
@@ -78,6 +84,15 @@ const Aboutme = () => {
                 duration: 500,
                 direction: 'reverse'
             });
+            setTimeout(() => {
+                elements.forEach((el,i) => {
+                    anime({
+                        targets: el,
+                        width: [0,width[i]],
+                        duration: 3000,
+                      });
+                })
+            }, 1000);
     }
     return (
         <div className="aboutme">
