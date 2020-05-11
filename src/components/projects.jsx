@@ -98,13 +98,14 @@ const Projects = () => {
     }
     let showncards;
     const cardout = () => {
+        if ((typeof window !== 'undefined')){
         anime({
             targets: '.card',
             scale: [1,0],
             opacity: [1,0],
             easing: 'spring',
             duration: 400
-        });
+        });}
     }
     const cardin = () => {
         anime({

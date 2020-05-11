@@ -81,3 +81,13 @@
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+  .btn,.btn:hover {
+    cursor: pointer;
+    background:none;
+    outline: 0;
+    border: none;
+    -moz-outline-style: none;
+  }
+  .btn:hover{
+    color:black;
+  }

@@ -61,9 +61,9 @@ class Navbar extends Component{
         return (
             <div className="mynav">
             <Menu isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
-                <h3 onClick={() => {this.closeMenu(); this.state.about.about.scrollIntoView({ behavior: 'smooth', block: 'start'});}} ><h3>Home</h3></h3>
-                <h3 onClick={() => {this.closeMenu();this.state.about.project.scrollIntoView({ behavior: 'smooth', block: 'start'});}}><h3>Projects</h3></h3>
-                <h3 onClick={() => this.closeMenu()}><h3>Contact</h3></h3>
+                <h3 className="btn" onClick={() => {this.closeMenu(); this.state.about.about.scrollIntoView({ behavior: 'smooth', block: 'start'});}} >Home</h3>
+                <h3 className="btn" onClick={() => {this.closeMenu();this.state.about.project.scrollIntoView({ behavior: 'smooth', block: 'start'});}}>Projects</h3>
+                <h3 className="btn" onClick={() => this.closeMenu()}>Contact</h3>
             </Menu>
           </div>
         );

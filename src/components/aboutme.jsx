@@ -15,7 +15,7 @@ const Aboutme = () => {
     useEffect(() => {
         window.addEventListener('scroll', (e) => {
             if (isScrolledIntoView(document.querySelector('.abouticon'),550)) setShow(true);
-            if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true);
+            if (isScrolledIntoView(document.querySelector('.whoami'),400)) setShowskill(true);
 
         });
         if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true); // first load check if already in position
