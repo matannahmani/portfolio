@@ -85,13 +85,18 @@ const Aboutme = () => {
                 direction: 'reverse'
             });
             setTimeout(() => {
-                elements.forEach((el,i) => {
-                    anime({
-                        targets: el,
-                        width: [0,width[i]],
-                        duration: 3000,
-                      });
-                })
+                for (var i=0;i<elements.length;i++) {
+                    ((ind) => {
+                    setTimeout(() => {
+                        anime({
+                            targets: elements[ind],
+                            width: [0,width[ind]],
+                            duration: 500,
+                            easing: 'linear'
+                          });
+                    }, 500 * ind);
+                    })(i);
+                 }
             }, 1000);
     }
     return (
