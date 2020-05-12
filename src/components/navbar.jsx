@@ -7,7 +7,6 @@ class Navbar extends Component{
         menuOpen: false,
         about: undefined
       }
-
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange (state) {
@@ -20,7 +19,8 @@ class Navbar extends Component{
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
         this.setState({about: {about: document.querySelector('.aboutme'),
-        project: document.querySelector('.project')
+        project: document.querySelector('.project'),
+        contact: document.querySelector('.inquiry')
       }});
     }
     isScrolling;
@@ -49,10 +49,24 @@ class Navbar extends Component{
             nav.style.width = "0%";
             button.style.opacity = 0;
             // Set a timeout to run after scrolling ends
+            const isScrolledIntoView = (el) => {
+              var rect = el.getBoundingClientRect();
+              var elemTop = rect.top;
+              var elemBottom = rect.bottom;
+          
+              // Only completely visible elements return true:
+              var isVisible = (elemTop < 20) && (elemBottom >= 0);
+              // Partially visible elements return true:
+              //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+              return isVisible;
+          }
             this.isScrolling = setTimeout(() => {
                 // show navbar after display ends
                 nav.classList.remove('hide');
                 button.style.opacity = 0.99;
+                if (isScrolledIntoView(document.querySelector('.inquiry')))
+                burgericon.forEach ((icon) => icon.style.background = 'white');
+                else
                 burgericon.forEach ((icon) => icon.style.background = 'black');
             }, 66);
         }
@@ -63,7 +77,7 @@ class Navbar extends Component{
             <Menu isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
                 <h3 className="btn" onClick={() => {this.closeMenu(); this.state.about.about.scrollIntoView({ behavior: 'smooth', block: 'start'});}} >Home</h3>
                 <h3 className="btn" onClick={() => {this.closeMenu();this.state.about.project.scrollIntoView({ behavior: 'smooth', block: 'start'});}}>Projects</h3>
-                <h3 className="btn" onClick={() => this.closeMenu()}>Contact</h3>
+                <h3 className="btn" onClick={() => {this.closeMenu();this.state.about.contact.scrollIntoView({ behavior: 'smooth', block: 'start'});}}>Contact</h3>
             </Menu>
           </div>
         );

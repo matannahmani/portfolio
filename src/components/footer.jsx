@@ -1,12 +1,13 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { Icon, InlineIcon } from '@iconify/react';
+import linkedinFilled from '@iconify/icons-ant-design/linkedin-filled';
+import instagramFilled from '@iconify/icons-ant-design/instagram-filled';
 const footer = () => {
   return (
     <div className="footer w-100">
       <div className="footer-links">
-        {/* <a href="#"><span className="iconify" data-icon="mdi:facebook" data-inline="false"></span></a>
-        <a href="#" style={{marginTop: "3px"}}><span className="iconify" data-icon="ant-design:instagram-filled" data-inline="false"></span></a>
-        <a href="#" style={{marginTop: "3px"}}><span className="iconify" data-icon="ant-design:youtube-filled" data-inline="false"></span></a> */}
+        <a href="https://www.linkedin.com/in/matan-nahmani"><Icon icon={linkedinFilled} /></a>
+        <a href="https://www.instagram.com/matannahamani/"><Icon icon={instagramFilled}/></a>
       </div>
       <div className="footer-copyright">
         Matan Nahmani 2020©

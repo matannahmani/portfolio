@@ -11,12 +11,12 @@ let flag = [false,false]; // after anim shown trigger flag
 const Aboutme = () => {
     const [show, setShow] = useState(false);
     const [showskillbox, setShowskill] = useState(false);
-
+    const [inquiry,setInquiry] = useState(undefined);
     useEffect(() => {
+        setInquiry(document.querySelector('.inquiry'));
         window.addEventListener('scroll', (e) => {
             if (isScrolledIntoView(document.querySelector('.abouticon'),550)) setShow(true);
             if (isScrolledIntoView(document.querySelector('.whoami'),400)) setShowskill(true);
-
         });
         if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true); // first load check if already in position
         if (show === true && flag[0] === false){
@@ -36,7 +36,6 @@ const Aboutme = () => {
     
         // Only completely visible elements return true:
         var isVisible = (elemTop < range) && (elemBottom >= 0);
-        console.log(el.className + isVisible + ' ' + elemTop)
         // Partially visible elements return true:
         //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
         return isVisible;
@@ -115,7 +114,7 @@ const Aboutme = () => {
                 <p>
 I'm a Full-Stack Developer from Eilat in Israel.<br/>
 I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.<br/>
-Let's make something special. </p>
+<span style={{color: '#3a86ff',fontWeight: 850}} onClick={(typeof inquiry !== 'undefined') ? () => inquiry.scrollIntoView({ behavior: 'smooth', block: 'start'}): console.log('error')}>Let's make something special.</span> </p>
                 </div>
                 <div className="myskills">
                     <Bar label="HTML" fill={80}/>

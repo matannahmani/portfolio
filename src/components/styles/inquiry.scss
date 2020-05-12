@@ -1,0 +1,63 @@
+.inquiry {
+	width: 100%;
+	height: 800px;
+	background: #252934;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+    align-items: center;
+    svg{
+        width: 100%;
+    }
+    span{
+        color: #04c2c9;
+        margin-top: 24px;
+        opacity: 0;
+    }
+    .section-t {
+        opacity: 1;
+        align-self: center;
+        width: -webkit-min-content;
+        width: min-content;
+        font-size: 40px;
+        color: white;
+        display: inline-block;
+        height: 50px;
+        margin-top: 64px;
+        box-shadow: 0 25px 0 -23px #FFF;
+        opacity: 0;
+    }
+}
+.form{
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        position: relative;
+        min-width: 500px;
+        opacity: 0;
+    input{
+        background: #1e242c;
+        color: white;
+        border: none;
+        outline: 0;
+        padding: 10px 15px;
+        margin-bottom: 4px;
+        width: 100%;
+        transition: border ease-in-out 1s;
+    }
+    button {
+        background: transparent;
+        color: white;
+        font-size: 14px;
+        width: min-content;
+        padding: 8px 24px;
+        align-self: end;
+        margin-top: 12px;
+        outline: 0;
+        border: 1.5px solid white;
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 500px){
+    .form{min-width: 90vw}
+}
