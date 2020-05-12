@@ -28,19 +28,21 @@ const Cardpop = (props) => {
                 setTimeout(() => props.unMount(),200)
             }
     },)
+    const slides = props.img.map((img,index) => {
+      return <Slide index={index}><img src={props.img[index]} alt=""/></Slide>
+    });
     return (
     <div className="cardpop">
         <div className="imgcontroll">
         <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={125}
-        totalSlides={2}
+        totalSlides={props.img.length}
         infinite={true}
         isPlaying={true}
       >
         <Slider>
-          <Slide index={0}><img src={props.img} alt=""/></Slide>
-          <Slide index={1}><img src="https://encdn.ldmnq.com/ldstore/en/Cy4NmE-1577354491996.jpg" alt=""/></Slide>
+          {slides}
         </Slider>
         <ButtonBack className="navt"><Icon icon={baselineArrowBackIos} /></ButtonBack>
         <ButtonNext className="navt"><Icon icon={baselineArrowBackIos} /></ButtonNext>
