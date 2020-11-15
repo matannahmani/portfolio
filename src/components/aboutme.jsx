@@ -9,7 +9,7 @@ import rocketIcon from '@iconify/icons-vaadin/rocket';
 import Bar from './barv2';
 let flag = [false,false]; // after anim shown trigger flag
 const Aboutme = () => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const [showskillbox, setShowskill] = useState(false);
     const [inquiry,setInquiry] = useState(undefined);
     useEffect(() => {
@@ -17,7 +17,7 @@ const Aboutme = () => {
         window.addEventListener('scroll', (e) => {
             if (isScrolledIntoView(document.querySelector('.abouticon'),550)) setShow(true);
             if (isScrolledIntoView(document.querySelector('.whoami'),400)) setShowskill(true);
-        });
+        },[]);
         if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true); // first load check if already in position
         if (show === true && flag[0] === false){
             animateabout();
@@ -27,13 +27,13 @@ const Aboutme = () => {
         if (showskillbox && flag[1] === false){
             animateskills();
             flag[1] = true;
-        } 
+        }
     });
     const isScrolledIntoView = (el,range = 270) => {
         var rect = el.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
-    
+
         // Only completely visible elements return true:
         var isVisible = (elemTop < range) && (elemBottom >= 0);
         // Partially visible elements return true:
@@ -117,13 +117,16 @@ I have serious passion for UI effects, animations and creating intuitive, dynami
 <span style={{color: '#3a86ff',fontWeight: 850}} onClick={(typeof inquiry !== 'undefined') ? () => inquiry.scrollIntoView({ behavior: 'smooth', block: 'start'}): console.log('error')}>Let's make something special.</span> </p>
                 </div>
                 <div className="myskills">
-                    <Bar label="HTML" fill={80}/>
-                    <Bar label="CSS" fill={70}/>
-                    <Bar label="React" fill={65}/>
-                    <Bar label="React Native" fill={35}/>
-                    <Bar label="JavaScript" fill={70}/>
-                    <Bar label="Ruby/Rails" fill={70}/>
-                    <Bar label="C#" fill={100}/>
+                    <Bar label="HTML5" fill={90}/>
+                    <Bar label="CSS3" fill={80}/>
+                    <Bar label="React" fill={80}/>
+                    <Bar label="Context API" fill={60}/>
+                    <Bar label="Redux" fill={50}/>
+                    <Bar label="React Native" fill={30}/>
+                    <Bar label="JavaScript" fill={80}/>
+                    <Bar label="Ruby/Rails" fill={80}/>
+                    <Bar label="NextJS" fill={50}/>
+                    <Bar label="C#" fill={60}/>
                     <Bar label="PhaserJS" fill={50}/>
                     <Bar label="Photoshop" fill={30}/>
 
