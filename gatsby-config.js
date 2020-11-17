@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Matan Nahmani`,
-    description: `Full stack web developer, react js react native and many more !`,
+    description: `Full-Stack Web developer, ReactJS Rails and many more !`,
     author: `Matan Nahmani`,
   },
-  pathPrefix: "/portfolio",
+  pathPrefix: "/",
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,

@@ -25,7 +25,7 @@ const Projects = () => {
             if (isScrolledIntoView(document.querySelector('.project'))) setShowanim(true);
             if (isScrolledIntoView(document.querySelector('.card'),450)) setShowanimcard(true);
 
-        });
+        },[showanim, tab]);
         // First load position floatbar to all + load animation
         if (isScrolledIntoView(document.querySelector('.project'))) setShowanim(true);
         if (isScrolledIntoView(document.querySelector('.card'),450)) setShowanimcard(true);

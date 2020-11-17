@@ -6,13 +6,13 @@ import Navbar from "../components/navbar";
 import Aboutme from '../components/aboutme';
 import Project from '../components/projects';
 import Inquiry from '../components/inquiry';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 class Index extends Component{
-  
+
   componentDidMount() {
   }
-  
+
   render() {
     return(
       <Layout>

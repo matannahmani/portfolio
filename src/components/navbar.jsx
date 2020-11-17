@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { bubble as Menu } from 'react-burger-menu'
-import { Link } from "gatsby"
 
 class Navbar extends Component{
     state = {
@@ -10,9 +9,9 @@ class Navbar extends Component{
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange (state) {
-    this.setState({menuOpen: state.isOpen})  
+    this.setState({menuOpen: state.isOpen})
   }
-  
+
   closeMenu () {
     this.setState({menuOpen: false})
   }
@@ -53,7 +52,7 @@ class Navbar extends Component{
               var rect = el.getBoundingClientRect();
               var elemTop = rect.top;
               var elemBottom = rect.bottom;
-          
+
               // Only completely visible elements return true:
               var isVisible = (elemTop < 20) && (elemBottom >= 0);
               // Partially visible elements return true:

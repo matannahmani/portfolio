@@ -34,13 +34,15 @@
   .bm-cross-button {
     height: 24px;
     width: 24px;
-    top: 24px;
-    right: 24px;
+    top: 8px !important;
+    right: 24px !important;
   }
 
   /* Color/shape of close button cross */
   .bm-cross {
     background: #bdc3c7;
+    width: 4px !important;
+    height: 24px !important;
   }
 
   /*
