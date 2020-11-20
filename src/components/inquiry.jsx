@@ -37,7 +37,6 @@ const Inquiry = () =>{
     useEffect(() =>{
         const form = document.querySelector('.form');
         window.onscroll = (el) => {
-            console.log(anim);
             if (isScrolledIntoView(form) && anim === false){
                 setanim(true)
                 anime({
