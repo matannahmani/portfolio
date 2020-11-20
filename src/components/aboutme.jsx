@@ -119,16 +119,16 @@ I have serious passion for UI effects, animations and creating intuitive, dynami
                 <div className="myskills">
                     <Bar label="HTML5" fill={90}/>
                     <Bar label="CSS3" fill={80}/>
-                    <Bar label="React" fill={80}/>
+                    <Bar label="React" fill={60}/>
                     <Bar label="Context API" fill={60}/>
-                    <Bar label="Redux" fill={50}/>
-                    <Bar label="React Native" fill={30}/>
+                    <Bar label="Redux" fill={40}/>
+                    <Bar label="React Native" fill={40}/>
                     <Bar label="JavaScript" fill={80}/>
                     <Bar label="Ruby/Rails" fill={80}/>
-                    <Bar label="NextJS" fill={50}/>
+                    <Bar label="NextJS" fill={60}/>
                     <Bar label="C#" fill={60}/>
                     <Bar label="PhaserJS" fill={50}/>
-                    <Bar label="Photoshop" fill={30}/>
+                    <Bar label="Photoshop" fill={40}/>
 
                 </div>
             </div>

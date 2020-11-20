@@ -6,9 +6,20 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import anime from 'animejs';
 import adminSiteAlt3 from '@iconify/icons-dashicons/admin-site-alt3';
+import { toast } from 'react-toastify';
 
 const Cardpop = (props) => {
     const [close,setClose] = useState(false);
+    const toastshow = () => {
+      toast.info(`Website URL is not available`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true
+        });
+    }
     window.addEventListener('keydown', key => {if (key.isComposing || key.keyCode === 27) setClose(true)});
     useEffect(() => {
             anime({
@@ -52,7 +63,11 @@ const Cardpop = (props) => {
           <h3>{props.name}</h3>
           <span>{props.done}</span>
           <span className="card-p">{props.descp}</span>
+          {props.site.length > 0 ? 
           <a href={props.site} target="_blank"><span className="show-site"><Icon id="#site-show" icon={adminSiteAlt3} /> VIEW SITE</span></a>
+          :
+          <btn onClick={toastshow}><span className="show-site"><Icon id="#site-show" icon={adminSiteAlt3} /> VIEW SITE</span></btn>
+          }
         </div>
         <Icon id='close' onClick={() => setClose(true)} icon={closeIcon} />
     </div>

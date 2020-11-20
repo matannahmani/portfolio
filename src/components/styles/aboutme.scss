@@ -68,35 +68,6 @@
     .myskills{
         width: 80%;
         margin-left: 80px;
-        .bar{
-                display: inline-flex;
-                width: 100%;
-                background: #eee;
-                height: 40px;
-                color: white;
-                margin: 6px 0;
-                position: relative;
-                h3 {
-                    background: #04c2c9;
-                    height: 100%;
-                    width: 100px;
-                    font-size: 0.65rem;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-                .fill{
-                    background: #00a1a7;
-                }
-                span{
-                    margin: 0px 1%;
-                    color: gray;
-                    margin-left: auto;
-                    margin-right: 4px;
-                    display: flex;
-                    align-items: center;
-                }
-        }
     }
 }
 .flex-c {
@@ -106,8 +77,8 @@
 	justify-content: center;
 }
 @media only screen and (max-width: 1099px){
-    
-    .aboutp { 
+
+    .aboutp {
         width: 33vw;
         p{
             line-height: 0.9;

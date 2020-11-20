@@ -7,10 +7,14 @@ let flag = [false,false]; // after anim shown trigger flag
 let resize;
 
 const cards = [
-    {code: ['r/r','js'],url:'http://lastresort.pw', lang:"JS - React + Ruby/Rails", descp: 'Last Resort is a mobile geolocation game inspired by Pokemon go and Clash of clans, explore grow conqure!' , title:"Last Resort", img:["http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275673/Screenshot_from_2020-05-12_18-12-00_i3hffs.png","http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275775/Screenshot_from_2020-05-12_18-11-34_lmytvd.png","http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275816/Screenshot_from_2020-05-12_18-12-10_fl9gcw.png"] },
+    {code: ['r/r','js'],url:'http://lastresort.pw', lang:"JS - React + Ruby/Rails", descp: 'Last Resort is a mobile geolocation game inspired by Pokemon go and Clash of clans, explore grow conqure!' , title:"Last Resort", img:["lastresort1.png","lastresort2.png","lastresort3.png"] },
     {code: ['js'],url:'http://matannahmani.github.io/portfolio', lang:"JS - React + Gatsby", title:"Portfolio", descp: 'My portfolio site utlize gatsby animejs and react', img:["https://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275858/Screenshot_from_2020-05-12_18-18-58_xsqfuv.png","http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275911/Screenshot_from_2020-05-12_18-19-06_monqow.png"] },
     {code: ['r/r'],url:'http://doublethefun.herokuapp.com', lang:"Ruby/Rails", title:"Doublethefun", descp: 'My first website built in Ruby/Rails aims to help pepole find soccer experinces',img:["http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275962/Screenshot_from_2020-05-12_18-13-20_gxjalq.png","http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589276014/Screenshot_from_2020-05-12_18-15-21_f5hjiz.png"] },
-    {code: ['r/r','js'],url:'http://mixerz.herokuapp.com', lang:"JS - React + Ruby/Rails", title:"Mixerz", descp: 'My current project aims to help find like minded party pepole to hangout with! being built with React for Front-End Rails API *WORK IN PROGRESS*', img:["https://res.cloudinary.com/ddqtnp0ic/image/upload/v1589276129/Screenshot_from_2020-05-12_18-20-24_mqeeuo.png","https://res.cloudinary.com/ddqtnp0ic/image/upload/v1589276274/Screenshot_from_2020-05-12_18-20-56_abhluh.png"] }
+    {code: ['r/r','js'],url:'', lang:"JS - React + Ruby/Rails", title:"Mixerz", descp: 'My current project aims to help find like minded party pepole to hangout with! being built with React for Front-End Rails API *WORK IN PROGRESS*', img:["https://res.cloudinary.com/ddqtnp0ic/image/upload/v1589276129/Screenshot_from_2020-05-12_18-20-24_mqeeuo.png","https://res.cloudinary.com/ddqtnp0ic/image/upload/v1589276274/Screenshot_from_2020-05-12_18-20-56_abhluh.png"] },
+    {code: ['wp'],url:'https://3d.fixercard.co.il/', lang:"WordPress Elementor + JS", title:"3D", descp: 'Landing page built for customer includes 3 templates with a feeling of a SPA', img:["3d.png"] },
+    {code: ['wp'],url:'https://peoplefirst.org.il/', lang:"WordPress Elementor", title:"People First Israel", descp: 'Website built for local organization', img:["peoplefirst.png"] },
+    {code: ['wp'],url:'https://hk-technologies.co.il/', lang:"WordPress Elementor", title:"HK Technologies Israel", descp: 'Website built for local company to improve sales', img:["hk1.png","hk2.png"] },
+    {code: ['r/r'],url:'', lang:"Ruby/Rails + JS + i18n", title:"Solidarity CRM", descp: 'CRM App built for a local organization during COVID-19, to recruit volunteers, manage calls for help, open calls, and more', img:["solidarity1.png","solidarity2.png","solidarity3.png","solidarity4.png"] }
 ]
 const Projects = () => {
     const [showanim, setShowanim] = useState(false);
@@ -137,7 +141,15 @@ const Projects = () => {
                     return <Card {...card}/>
                 });
             setTimeout(() => cardin(), 400);
-        }
+        break;
+        case 3:
+            cardout();
+            showncards = cards.map( (card) => {
+                if(card.code.includes('wp'))
+                    return <Card {...card}/>
+                });
+            setTimeout(() => cardin(), 400);
+            }
     return(
         <div className="project">
         <h3 className="section-t">Projects</h3>
@@ -146,6 +158,7 @@ const Projects = () => {
                 <span onClick={() => setTab(0)}>ALL</span>
                 <span onClick={() => setTab(1)}>REACT</span>
                 <span onClick={() => setTab(2)}>Ruby/Rails</span>
+                <span onClick={() => setTab(3)}>WordPress</span>
             </div>
             <div className="cardbox">
                 <div className="card" style={{display: 'none'}}></div>

@@ -3,10 +3,10 @@ import { toast } from 'react-toastify';
 import anime from 'animejs';
 const postMsg = () => {
     const inputs = document.querySelectorAll('.form input');
-    let form = {};
+    let form = {inquire: {}};
     let flag = true;
     inputs.forEach ( (field) => {
-        if (field.value.length > 3)form[field.id] = field.value
+        if (field.value.length > 3)form['inquire'][field.id] = field.value
         else {
             flag = false
             field.style.border = '1px solid red'
@@ -16,15 +16,13 @@ const postMsg = () => {
         }
     })
     if (flag === true){
-        fetch('https://matan-portfolio-api.herokuapp.com/inquires', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form),
-        })
-        toast.success('Sent successfully!', {
-            position: "top-center",
+        // console.log(form);
+        // const axios = require('axios');
+        // axios.post('https://matan-portfolio-api.herokuapp.com/inquires', {
+        // form
+        // })
+        toast.error('Disabled', {
+            position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
