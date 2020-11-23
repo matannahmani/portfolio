@@ -21,5 +21,5 @@ const Header = () => {
         </Anime>
     );
   }
- 
+
 export default Header;

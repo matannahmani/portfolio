@@ -40,7 +40,7 @@ const Cardpop = (props) => {
             }
     },)
     const slides = props.img.map((img,index) => {
-      return <Slide index={index}><img src={props.img[index]} alt=""/></Slide>
+      return <Slide index={index}><img src={props.img[index]} alt={`project ${props.name} image`}/></Slide>
     });
     return (
     <div className="cardpop">
@@ -63,7 +63,7 @@ const Cardpop = (props) => {
           <h3>{props.name}</h3>
           <span>{props.done}</span>
           <span className="card-p">{props.descp}</span>
-          {props.site.length > 0 ? 
+          {props.site.length > 0 ?
           <a href={props.site} target="_blank"><span className="show-site"><Icon id="#site-show" icon={adminSiteAlt3} /> VIEW SITE</span></a>
           :
           <btn onClick={toastshow}><span className="show-site"><Icon id="#site-show" icon={adminSiteAlt3} /> VIEW SITE</span></btn>

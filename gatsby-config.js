@@ -3,6 +3,7 @@ module.exports = {
     title: `Matan Nahmani`,
     description: `Full-Stack Web developer, ReactJS Rails and many more !`,
     author: `Matan Nahmani`,
+    siteUrl: `https://www.matannahmani.com`,
   },
   pathPrefix: "/",
   plugins: [
@@ -16,6 +17,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
