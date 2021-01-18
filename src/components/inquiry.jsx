@@ -16,12 +16,14 @@ const postMsg = () => {
         }
     })
     if (flag === true){
-        // console.log(form);
-        // const axios = require('axios');
-        // axios.post('https://matan-portfolio-api.herokuapp.com/inquires', {
-        // form
-        // })
-        toast.error('Disabled', {
+        const axios = require('axios');
+        axios.defaults.headers.common['Content-Type'] = 'application/json';
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://matan-portfolio-api.herokuapp.com';
+        axios.defaults.headers.common['Access-Control-Allow-Methods'] = "DELETE, POST, GET, PATCH";
+        axios.post('https://matan-portfolio-api.herokuapp.com/inquires', {
+        form
+        })
+        toast.success('Message Sent', {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
