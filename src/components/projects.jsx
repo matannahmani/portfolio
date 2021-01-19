@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import anime from 'animejs';
-import Card from './card';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Card from './card';  
 let flag = [false,false]; // after anim shown trigger flag
 let resize;
 
@@ -42,14 +40,6 @@ const Projects = () => {
                 floatbar.style.left = tabs[tab].offsetLeft+'px';
                 floatbar.style.transition = ''; // enable transition animation after fast scroll check
                 flag[0] = true;
-                toast.info('Click on project to view details!', {
-                    position: "top-center",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true
-                    });
             }
 
         // check for RESIZE

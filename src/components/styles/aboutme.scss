@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
+    opacity: 1;
     width: 25%;
     text-align: center;
     p{
@@ -37,7 +37,7 @@
     flex-direction: column;
 }
 .section-t{
-    opacity: 0;
+    opacity: 1;
     align-self: center;
     width: min-content;
     font-size:40px;

@@ -37,6 +37,7 @@
     "react-burger-menu": "^2.9.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-particles-js": "^3.4.1",
     "react-responsive": "^8.1.1",
     "react-responsive-carousel": "^3.2.10",
     "react-toastify": "^6.1.0",

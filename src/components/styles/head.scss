@@ -12,10 +12,23 @@
         line-height: 80px;
         font-size: 2rem;
         text-align: center;
+        z-index: 1;
+        animation: appear 3s;
+    }
+    canvas{
+        z-index: 0 !important;
     }
 }
 header{
     position: relative;
+}
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 @media only screen and (max-width: 400px) {
     .banner { h1 { font-size: 1.5rem; } }

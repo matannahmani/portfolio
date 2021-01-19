@@ -16,12 +16,12 @@ const Aboutme = () => {
         setInquiry(document.querySelector('.inquiry'));
         window.addEventListener('scroll', (e) => {
             if (isScrolledIntoView(document.querySelector('.abouticon'),550)) setShow(true);
-            if (isScrolledIntoView(document.querySelector('.whoami'),400)) setShowskill(true);
+            if (isScrolledIntoView(document.querySelector('.whoami'),700)) setShowskill(true);
         },[]);
         if (isScrolledIntoView(document.querySelector('.whoami'),200)) setShowskill(true); // first load check if already in position
         if (show === true && flag[0] === false){
-            animateabout();
-            animateicons();
+            // animateabout();
+            // animateicons();
             flag[0] = true;
         }
         if (showskillbox && flag[1] === false){
@@ -114,18 +114,18 @@ const Aboutme = () => {
                 <p>
 I'm a Full-Stack Developer from Eilat in Israel.<br/>
 I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.<br/>
-<span style={{color: '#3a86ff',fontWeight: 850}} onClick={(typeof inquiry !== 'undefined') ? () => inquiry.scrollIntoView({ behavior: 'smooth', block: 'start'}): console.log('error')}>Let's make something special.</span> </p>
+<span style={{color: '#3a86ff',fontWeight: 850,cursor: 'pointer'}} onClick={(typeof inquiry !== 'undefined') ? () => inquiry.scrollIntoView({ behavior: 'smooth', block: 'start'}): null}>Let's make something special.</span> </p>
                 </div>
                 <div className="myskills">
                     <Bar label="HTML5" fill={90}/>
-                    <Bar label="CSS3" fill={80}/>
-                    <Bar label="React" fill={60}/>
-                    <Bar label="Context API" fill={60}/>
+                    <Bar label="CSS3" fill={85}/>
+                    <Bar label="React" fill={80}/>
+                    <Bar label="Context API" fill={80}/>
                     <Bar label="Redux" fill={40}/>
                     <Bar label="React Native" fill={40}/>
-                    <Bar label="JavaScript" fill={80}/>
-                    <Bar label="Ruby/Rails" fill={80}/>
-                    <Bar label="NextJS" fill={60}/>
+                    <Bar label="JavaScript" fill={85}/>
+                    <Bar label="Ruby/Rails" fill={85}/>
+                    <Bar label="NextJS" fill={80}/>
                     <Bar label="C#" fill={60}/>
                     <Bar label="PhaserJS" fill={50}/>
                     <Bar label="Photoshop" fill={40}/>
