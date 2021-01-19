@@ -16,7 +16,7 @@ class Index extends Component{
   render() {
     return(
       <Layout>
-      <SEO title="Matan Nahmani" />
+      <SEO title="Matan Nahmani | Full Stack Web Developer" />
       <header>
       <Navbar right disableAutoFocus disableCloseOnEsc/>
       <Banner/>
