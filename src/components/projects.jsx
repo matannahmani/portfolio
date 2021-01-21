@@ -5,7 +5,7 @@ let flag = [false,false]; // after anim shown trigger flag
 let resize;
 
 const cards = [
-    {code: ['r/r','js'],url:'http://m.pepperonipizza.co.il/', lang:"JS - React + NextJS + Ruby/Rails API", descp: 'First Food Delivery App built using NextJS Context API, Rails API with REST pretty fun' , title:"Pizza App", img:["pizza1.png","pizza2.png","pizza3.png","pizza4.png","pizza5.png","pizza6.png"] },
+    {code: ['r/r','js'],url:'http://www.yourfoodapp.shop', lang:"JS - React + NextJS + Ruby/Rails API", descp: 'First Food Delivery App built using NextJS Context API, Rails API with REST pretty fun' , title:"Pizza App", img:["pizza1.png","pizza2.png","pizza3.png","pizza4.png","pizza5.png","pizza6.png"] },
     {code: ['js'],url:'http://it.eranfixer.com/', lang:"JS - React + NextJS + Sanity IO", descp: 'First site built with Sanity IO, pretty intresting project used RestAPI + NextJS' , title:"FixIT", img:["fixit1.png","fixit2.png","fixit3.png"] },
     {code: ['r/r','js'],url:'http://lastresort.pw', lang:"JS - React + Ruby/Rails", descp: 'Last Resort is a mobile geolocation game inspired by Pokemon go and Clash of clans, explore grow conqure!' , title:"Last Resort", img:["lastresort1.png","lastresort2.png","lastresort3.png"] },
     {code: ['js'],url:'http://matannahmani.github.com', lang:"JS - React + Gatsby", title:"Portfolio", descp: 'My portfolio site utlize gatsby animejs and react', img:["https://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275858/Screenshot_from_2020-05-12_18-18-58_xsqfuv.png","http://res.cloudinary.com/ddqtnp0ic/image/upload/v1589275911/Screenshot_from_2020-05-12_18-19-06_monqow.png"] },
